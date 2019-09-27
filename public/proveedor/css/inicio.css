@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+}
+header{
+    background-color: #183c56;
+    z-index:1;
+        height: 50px;
+}
+header ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+
+header li a {
+    border-bottom: solid 1px #b5b3b3;
+     padding: 10px;
+   display: block;
+   text-decoration: none;
+ }
+ 
+ /* Change the link color on hover */
+header li a:hover {
+   background-color: #555;
+   color: white;
+ }
