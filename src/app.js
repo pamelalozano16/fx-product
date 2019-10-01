@@ -6,7 +6,7 @@ require('./db/mongoose')
 
 
 const app = express()
-const port = process.env.PORT || 3003
+const port = process.env.PORT || 3000
 
 app.use(express.json())
 app.use(facturasPublicadas)
@@ -19,6 +19,10 @@ app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath))
+
+app.get('/', (req, res)=>{
+    res.render('inicio')
+})
 
 //PROVEEDOR
 app.get('/proveedor/inicio', (req, res)=>{
