@@ -1,0 +1,58 @@
+.seccion-busqueda{
+    margin-top:10px;
+}
+
+.seccion-busqueda select{
+border: 1px solid #ccc;
+min-width: 150px;
+width: 155px;
+border-radius: 8px;
+height: 30;
+}
+
+.seccion-busqueda input{
+border: 1px solid #ccc;
+min-width: 150px;
+width: 155px;
+border-radius: 8px;
+height: 30;
+}
+
+
+.busqueda-div * {
+    box-sizing: border-box;
+  }
+  
+.busqueda-div .column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+.busqueda-div .row:after {
+    content: "";
+    clear: both;
+  }
+
+  @media only screen and (max-width:900px){
+    .busqueda-div .column {
+      float:none;
+      padding:0;
+      height: auto;
+    }
+}
+
+button{
+  background-color: #1d76bd;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

@@ -1,11 +1,15 @@
 const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
+const facturasPublicadas = require('./routes/facturaPublicada')
+require('./db/mongoose')
+
 
 const app = express()
-const port = 3003
+const port = process.env.PORT || 3003
 
 app.use(express.json())
+app.use(facturasPublicadas)
 
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates')
@@ -16,8 +20,12 @@ app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath))
 
-app.get('/p-inicio', (req, res)=>{
+//PROVEEDOR
+app.get('/proveedor/inicio', (req, res)=>{
     res.render('proveedor/inicio')
+})
+app.get('/proveedor/consultar-facturas', (req, res)=>{
+    res.render('proveedor/consultar-facturas')
 })
 
 app.listen(port, () => {
