@@ -69,6 +69,14 @@ td{
   height: 50px;
 }
 
+.search-table{
+  margin-top:27%;
+  overflow-x: auto; 
+  white-space: nowrap;
+  min-width:300px;
+  margin-bottom:5%;
+}
+
 @media only screen and (max-width:900px){
   .busqueda-div .column {
     float:none;

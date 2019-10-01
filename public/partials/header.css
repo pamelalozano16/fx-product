@@ -13,3 +13,7 @@
 .main-content{
   margin-left:200px;
 }
+
+body{
+  overflow-x: auto; 
+}
