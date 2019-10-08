@@ -33,6 +33,16 @@ app.get('/proveedor/consultar-facturas', (req, res)=>{
     res.render('proveedor/consultar-facturas')
 })
 
+
+//COMPRADOR
+app.get('/comprador/inicio', (req, res)=>{
+    res.render('comprador/inicio')
+})
+app.get('/comprador/registro-facturas', (req, res)=>{
+    res.render('comprador/registro-facturas')
+})
+
+
 app.listen(port, () => {
     console.log('Server is up on port '+port)
 })

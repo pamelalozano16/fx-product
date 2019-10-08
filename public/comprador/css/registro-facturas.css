@@ -1,0 +1,64 @@
+.register-form{
+    margin-top: 5%;
+}
+#individual-form{
+    display:none;
+}
+#multiple-form{
+    display:none;
+}
+.form{
+    margin-top:3%;
+    margin-left:5%;
+}
+
+.form select{
+    border: 1px solid #ccc;
+    min-width: 150px;
+    width: 155px;
+    border-radius: 8px;
+    height: 30;
+}
+    
+.form input{
+    border: 1px solid #ccc;
+    min-width: 150px;
+    width: 155px;
+    border-radius: 8px;
+    height: 30;
+}
+
+
+#indv-form p{
+    margin:10px 0;
+}
+
+#indv-form input{
+    width:200px;
+    padding-left:5px;
+}
+
+#indv-registrar{
+    display:block;
+    margin-top:3%;
+    background-color:rgb(11, 127, 67);
+}
+
+#multiple-form a{
+    color: forestgreen;
+}
+
+#multip-form{
+    display:block;
+}
+
+#multip-form input{
+    min-width:0;
+    width:auto;
+    height: 13px;
+}
+
+#multip-form p{
+margin-left:5px;
+margin:10px 0;
+}

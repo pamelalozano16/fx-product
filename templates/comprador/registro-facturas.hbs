@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/comprador/css/registro-facturas.css">
+    </head>
+    <body>
+        {{>header}}
+        {{>sbComprador}}
+        <div class="main-content">
+        <h1>Registro Facturas</h1>
+        <div class="register-form">
+            <div class="sel-tipo">
+                Tipo de carga: 
+                <button id="individual-btn">Individual</button>
+                <button id="multiple-btn">Multiple</button>
+            </div>
+            {{!-- INDIVIDUAL FORM --}}
+            <div id="individual-form" class="form">
+             <div id="indv-search">
+                 <p style="font-weight: 700">Search:</p>
+                Name:
+                     <select id="name">
+                         <option></option>
+                         <option>HEB</option>
+                     </select>
+                RFC:
+                <input id="rfc">
+                <button id="search-btn">Search</button>
+             </div>
+          <div id="indv-form">   
+       <p>Numero de Factura:</p>
+        <input id="numero">
+        <p>Fiscal folio / UUID:</p>
+        <input id="folioFiscal">
+        <p>Fecha de factura:</p>
+        <input id="invoiceDate" placeholder="MM/DD/YYYY">
+        <p>Fecha de vencimiento de factura:</p>
+        <input placeholder="MM/DD/YYYY" id="dueDate">
+        <p>Moneda:</p>
+        <input placeholder="Moneda" id="moneda">
+        <p>Valor de la Factura:</p>
+        <input placeholder="Valor" id="aforo">
+        <button id="indv-registrar">Registrar</button>
+        </div>
+            </div>
+            {{!-- MULTIPLE FORM --}}
+            <div id="multiple-form" class="form">
+            <p>Debe cumplir con el siguiente formato:</p> 
+            <a href="/comprador/formato-carga-multiple.pdf">Formato de carga multiple</a>
+            <div id="multip-form">
+            <p><input type="radio" name="optradio">Excel</p>
+            <p><input type="radio" name="optradio">Pipes (txt)</p>
+            <button id="multip-subir">Subir</button>
+            </div>
+            </div>
+        </div>
+        </div>
+
+<script src="/comprador/js/registro-facturas.js"></script>
+    </body>
+</html>
+

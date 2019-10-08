@@ -35,20 +35,6 @@ height: 30;
     clear: both;
   }
 
-button{
-  background-color: #1d76bd;
-  border-radius: 4px;
-  border: none;
-  color: white;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
 table{
   border-collapse: collapse;
   background: white;
