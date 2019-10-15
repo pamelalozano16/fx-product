@@ -45,6 +45,10 @@ table{
 
 }
 
+#result-table{
+  margin:0;
+}
+
 th{
   line-height: 1.2;
 }
@@ -56,7 +60,7 @@ td{
 }
 
 .search-table{
-  margin-top:27%;
+  margin-top:300px;
   overflow-x: auto; 
   white-space: nowrap;
   min-width:300px;

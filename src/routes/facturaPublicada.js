@@ -34,6 +34,8 @@ router.get('/facturas/:name?/:rfc?/:dueDate?/:moneda?/:status?', async (req, res
          }
          if(params.dueDate){
              params.dueDate=new Date(params.dueDate)
+             params.dueDate.setHours(0,0,0,0)
+            params.dueDate.setDate(params.dueDate.getDate()+1)
          }
          console.log(params)
          const user = await Factura.find(params)
