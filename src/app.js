@@ -3,6 +3,7 @@ const path = require('path');
 const hbs = require('hbs');
 const port = process.env.PORT || 3000
 const facturasPublicadas = require('./routes/facturaPublicada')
+const proveedor = require('./routes/proveedor')
 require('./db/mongoose')
 
 
@@ -11,6 +12,7 @@ const app = express()
 
 app.use(express.json())
 app.use(facturasPublicadas)
+app.use(proveedor)
 
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates')
@@ -32,6 +34,16 @@ app.get('/proveedor/inicio', (req, res)=>{
 app.get('/proveedor/consultar-facturas', (req, res)=>{
     res.render('proveedor/consultar-facturas')
 })
+
+
+//COMPRADOR
+app.get('/comprador/inicio', (req, res)=>{
+    res.render('comprador/inicio')
+})
+app.get('/comprador/registro-facturas', (req, res)=>{
+    res.render('comprador/registro-facturas')
+})
+
 
 app.listen(port, () => {
     console.log('Server is up on port '+port)

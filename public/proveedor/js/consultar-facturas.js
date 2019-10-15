@@ -33,10 +33,19 @@ function borrarTabla(){
     }
 }
 
+async function getProveedores(){
+  proveedoresJSON = await fetch('/proveedores')
+  proveedores = await proveedoresJSON.json()
+  for(var p in proveedores){
+      $("#names").append('<option>'+proveedores[p].name+'</option>')
+  }
+}
+getProveedores()
+
 async function search(){
     borrarTabla()
     
-let name = $("#name")[0].value||"&"
+let name = $("#names")[0].value||"&"
 let status = $("#status")[0].value||"&"
 let rfc = $("#rfc")[0].value||"&"
 let dueDate = $("#dueDate")[0].value||"&"
@@ -54,7 +63,7 @@ table.append(titles)
 for(var i in data){
      row = $('<tr />' );
      table.append( row );
-     cell = $('<td>'+data[i].name+'</td><td>'+data[i].rfc+'</td><td>'+data[i].numero+'</td><td>'+data[i].folioFiscal+'</td><td>'+data[i].invoiceDate+'</td><td>'+data[i].dueDate+'</td><td>'+data[i].moneda+'</td><td>'+formatNumber(data[i].aforo)+'</td><td>'+data[i].status+'</td>')
+     cell = $('<td>'+data[i].name+'</td><td>'+data[i].rfc+'</td><td>'+data[i].numero+'</td><td>'+data[i].folioFiscal+'</td><td>'+formatDate(data[i].invoiceDate)+'</td><td>'+formatDate(data[i].dueDate)+'</td><td>'+data[i].moneda+'</td><td>'+formatNumber(data[i].aforo)+'</td><td>'+data[i].status+'</td>')
      row.append( cell );
 }
     }
