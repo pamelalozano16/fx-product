@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const port = process.env.PORT || 3000
 const facturasPublicadas = require('./routes/facturaPublicada')
 const proveedor = require('./routes/proveedor')
+const comprador = require('./routes/comprador')
 require('./db/mongoose')
 
 
@@ -13,6 +14,7 @@ const app = express()
 app.use(express.json())
 app.use(facturasPublicadas)
 app.use(proveedor)
+app.use(comprador)
 
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates')
@@ -33,6 +35,9 @@ app.get('/proveedor/inicio', (req, res)=>{
 })
 app.get('/proveedor/consultar-facturas', (req, res)=>{
     res.render('proveedor/consultar-facturas')
+})
+app.get('/proveedor/descontar-facturas', (req, res)=>{
+    res.render('proveedor/descontar-facturas')
 })
 
 

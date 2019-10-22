@@ -34,7 +34,7 @@ function borrarTabla(){
 }
 
 async function getProveedores(){
-  proveedoresJSON = await fetch('/proveedores')
+  proveedoresJSON = await fetch('/compradores')
   proveedores = await proveedoresJSON.json()
   for(var p in proveedores){
       $("#names").append('<option>'+proveedores[p].name+'</option>')

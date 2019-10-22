@@ -1,0 +1,88 @@
+<html>
+    <head>
+<link rel="stylesheet" href="/proveedor/css/consultar-facturas.css">
+<link rel="stylesheet" href="/proveedor/css/descontar-facturas.css">
+
+    </head>
+    <body>
+        {{>header}}
+        {{>sbProveedor}}
+        {{!-- Starts main content --}}
+        <div class="main-content">
+        <h1>Descontar Facturas</h1>
+
+        {{!-- Starts search div --}}
+        <div class="busqueda-div">
+           <h3>Buscar:</h3>
+           <form>
+            <div class="row">
+                <div class="column">
+               <div class="seccion-busqueda">
+                 <p>Nombre Comprador:</p> 
+                   <select id="names">
+                       <option></option>
+                   </select>
+               </div>
+               <div class="seccion-busqueda">
+                  <p>RFC:</p>
+                   <input type="text" id="rfc">
+               </div>
+                </div>
+               <div class="column">
+                <div class="seccion-busqueda">
+                 <p>Status:</p> 
+                   <select id="status">
+                        <option></option>
+                        <option value="Publicada">Publicada</option>
+                        <option value="En Proceso">En Proceso</option>
+                        <option value="Confirming">Confirming</option>
+                        <option value="Vendida">Vendida</option>
+                   </select>
+               </div>
+               <div class="seccion-busqueda">
+                  <p>Fecha de Vencimiento:</p>
+                   <input type="date" id="dueDate">
+               </div>
+            </div>
+               <div class="column">
+               <div class="seccion-busqueda">
+                 <p>Moneda:</p> 
+                   <select id="moneda">
+                       <option></option>
+                       <option value="mxn">MXN</option>
+                       <option value="usd">USD</option>
+                   </select>
+               </div>
+                </div>
+            </div>
+            
+            </form>
+            <button type="button" onclick="search()">Search</button>
+        </div>
+        {{!-- Ends search div --}}
+
+        {{!-- Starts Search Table Div --}}
+            <div class="search-table">
+                 <div class="desc-btn">
+<button style="background-color: forestgreen;" id="descontar">Descontar</button>
+                </div>
+            <table id="result-table"></table>
+        </div>
+        {{!-- Ends Search Table Div --}}
+
+{{!-- Starts Resumen Table Div --}}
+            <div class="search-table" id="resumen-div">
+           <div class="desc-btn">
+<button style="background-color: forestgreen;" id="confirmar">Confirmar</button>
+                </div>
+            <table id="resumen-table"></table>
+        </div>
+{{!-- End Resumen Table Div --}}
+
+
+        {{!-- Ends main content --}}
+        </div>
+        
+        <script src="/proveedor/js/descontar-facturas.js"></script>
+    </body>
+</html>
