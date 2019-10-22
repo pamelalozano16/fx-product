@@ -82,7 +82,7 @@ $("#descontar")[0].onclick= async function descontar(){
 //  console.log($("input[type=checkbox]"))
 $(".busqueda-div")[0].style.display="none";
 $(".search-table")[0].style.display="none";
-const arr=$("input[type=checkbox]:checked")
+var arr=$("input[type=checkbox]:checked")
 var table = $('#resumen-table');
 var row, cell;
 var titles = $('<th>Nombre del Comprador</th><th>RFC</th><th>Numero de Factura</th><th>Folio Fiscal</th><th>Fecha de Factura</th><th>Fecha de Vencimiento</th><th>Moneda</th><th> Valor de la Factura</th>');
@@ -91,7 +91,9 @@ i=0;
 for(var j=0;j<arr.length;j++){
 console.log(arr[j].id)
 const facturaJson = await fetch('/searchNumber/'+arr[j].id)
-const data = await facturaJson.json()
+var data = await facturaJson.json()
+data=await porConfirmar(data)
+console.log(data)
      row = $('<tr />' );
      table.append( row );
      cell = $('<td>'+data[i].name+'</td><td>'+data[i].rfc+'</td><td>'+data[i].numero+'</td><td>'+data[i].folioFiscal+'</td><td>'+formatDate(data[i].invoiceDate)+'</td><td>'+formatDate(data[i].dueDate)+'</td><td>'+data[i].moneda+'</td><td>'+formatNumber(data[i].aforo)+'</td>')
