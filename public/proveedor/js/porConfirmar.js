@@ -63,6 +63,7 @@ function matDate(day, month, year, gracia){
 async function porConfirmar(data){
     const compradorJson = await fetch('/compradores/searchOne/&/'+data[0].rfc)
     const comprador = (await compradorJson.json())
+    data[0].iva=roundNum(data[0].aforo*0.16)
     data[0].aforoP=comprador.aforo
     data[0].bufferDays=comprador.bufferDays
     data[0].purchaseDate=curday('/',0)
@@ -89,11 +90,12 @@ async function porConfirmar(data){
 
     //Discount margin
     const discountPorc =roundLibor(data[0].libor+data[0].spreadpoints)
+
     data[0].discountMargin=roundNum(data[0].advanceRate*(discountPorc)*(data[0].discountPeriod/365))
     
     data[0].efnFee=roundNum(data[0].advanceRate*(0.06)*(data[0].discountPeriod/365))
     data[0].purchasePrice=roundNum(data[0].advanceRate-data[0].discountMargin)
     data[0].status="En proceso"
-
+    data[0].porcentajeTotal=(data[0].purchasePrice/data[0].aforo)*100
     return data
 }
