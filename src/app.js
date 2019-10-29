@@ -49,6 +49,14 @@ app.get('/comprador/registro-facturas', (req, res)=>{
     res.render('comprador/registro-facturas')
 })
 
+//BANCO
+app.get('/banco/inicio', async(req, res)=>{
+    res.render('banco/inicio')
+})
+app.get('/banco/solicitudes', async(req, res)=>{
+    res.render('banco/solicitudes')
+})
+
 
 app.listen(port, () => {
     console.log('Server is up on port '+port)

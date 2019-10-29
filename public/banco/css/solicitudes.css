@@ -1,0 +1,89 @@
+.seccion-busqueda{
+    margin-top:10px;
+}
+
+.seccion-busqueda select{
+border: 1px solid #ccc;
+min-width: 150px;
+width: 155px;
+border-radius: 8px;
+height: 30;
+}
+
+.seccion-busqueda input{
+border: 1px solid #ccc;
+min-width: 150px;
+width: 155px;
+border-radius: 8px;
+height: 30;
+}
+
+
+.busqueda-div * {
+    box-sizing: border-box;
+  }
+  
+.busqueda-div .column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+.busqueda-div .row:after {
+    content: "";
+    clear: both;
+  }
+
+table{
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+
+}
+
+#result-table{
+  margin:0;
+}
+
+th{
+  line-height: 1.2;
+}
+
+td{
+  border:1px solid #ccc;
+  padding:5px 5px;
+  height: 50px;
+}
+
+.search-table{
+  margin-top:350px;
+  overflow-x: auto; 
+  white-space: nowrap;
+  min-width:300px;
+  margin-bottom:5%;
+}
+
+.confirm-btn{
+    margin-bottom: 25px;
+    background-color: brown;
+}
+
+@media only screen and (max-width:900px){
+  .busqueda-div .column {
+    float:none;
+    padding:0;
+    height: auto;
+  }
+}
+
+.cb{
+    border:none;
+}
+
+.search-btn{
+    margin-top:30px;
+}

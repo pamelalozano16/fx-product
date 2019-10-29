@@ -1,0 +1,67 @@
+<html>
+    <head>
+<link rel="stylesheet" href="/banco/css/solicitudes.css">
+    </head>
+    <body>
+        {{>header}}
+        {{>sbBanco}}
+        {{!-- Starts main content --}}
+        <div class="main-content">
+        <h1>Solicitudes</h1>
+
+        {{!-- Starts search div --}}
+        <div class="busqueda-div">
+           <h3>Buscar:</h3>
+           <form>
+            <div class="row">
+                <div class="column">
+               <div class="seccion-busqueda">
+                 <p>Nombre Comprador:</p> 
+                   <select id="names">
+                       <option></option>
+                   </select>
+               </div>
+               <div class="seccion-busqueda">
+                  <p>RFC:</p>
+                   <input type="text" id="rfc">
+               </div>
+                </div>
+               <div class="column">
+               <div class="seccion-busqueda">
+                  <p>Fecha de Vencimiento:</p>
+                   <input type="date" id="dueDate">
+               </div>
+            <div class="seccion-busqueda">
+            <button type="button" class="search-btn" onclick="search()">Search</button>
+               </div>
+            </div>
+               <div class="column">
+               <div class="seccion-busqueda">
+                 <p>Moneda:</p> 
+                   <select id="moneda">
+                       <option></option>
+                       <option value="mxn">MXN</option>
+                       <option value="usd">USD</option>
+                   </select>
+               </div>
+                </div>
+            </div>
+            
+            </form>
+
+        </div>
+        {{!-- Ends search div --}}
+
+        {{!-- Starts Table Div --}}
+        <div class="search-table">
+<button type="button" class="confirm-btn" onclick="confirmar()">Confirmar Solicitudes</button>
+            <table id="result-table"></table>
+        </div>
+        {{!-- Ends Table Div --}}
+
+        {{!-- Ends main content --}}
+        </div>
+        
+        <script src="/banco/js/solicitudes.js"></script>
+    </body>
+</html>
