@@ -85,8 +85,8 @@ $(".search-table")[0].style.display="none";
 var arr=$("input[type=checkbox]:checked")
 var table = $('#resumen-table');
 var row, cell;
-var titles = $('<th>Nombre del Comprador</th><th>RFC</th><th>Numero de Factura</th><th>Folio Fiscal</th><th>Fecha de Factura</th><th>Fecha de Vencimiento</th><th>Moneda</th><th> Valor de la Factura</th><th>IVA</th><th>Fecha de operación</th><th>Aforo</th>'
-+'<th>Dias de Gracia</th><th>Monto neto aforado</th><th>Plazo</th><th>Fecha final de vencimiento</th><th>Descuento</th><th>Monto a recibir</th><th>Porcentaje total</th>');
+var titles = $('<th>Nombre del Comprador</th><th>RFC</th><th>Numero de Factura</th><th>Folio Fiscal</th><th>Fecha de Factura</th><th>Fecha de Vencimiento</th><th>Moneda</th><th> Valor de la Factura</th><th>Fecha de operación</th><th>Aforo</th>'
++'<th>Monto neto aforado</th><th>Plazo</th><th>Fecha final de vencimiento</th><th>Descuento</th><th>Monto a recibir</th><th>Porcentaje total</th>');
 table.append(titles)
 i=0;
 for(var j=0;j<arr.length;j++){
@@ -97,8 +97,8 @@ data=await porConfirmar(data)
 console.log(data)
      row = $('<tr />' );
      table.append( row );
-     cell = $('<td>'+data[i].name+'</td><td>'+data[i].rfc+'</td><td class="number">'+data[i].numero+'</td><td>'+data[i].folioFiscal+'</td><td>'+formatDate(data[i].invoiceDate)+'</td><td>'+formatDate(data[i].dueDate)+'</td><td>'+data[i].moneda+'</td><td>'+formatNumber(data[i].aforo)+'</td><td>$'+data[i].iva+'</td><td>'
-     +formatDate(data[i].purchaseDate)+'</td><td>'+data[i].aforoP+'%</td><td>'+data[i].bufferDays+'</td><td>$'+formatNumber(data[i].advanceRate)+'</td><td>'+data[i].discountPeriod+'</td><td>'+formatDate(data[i].matuDate)+'</td><td>$'+formatNumber(data[i].discountMargin)+'</td><td>$'+formatNumber(data[i].purchasePrice)
+     cell = $('<td>'+data[i].name+'</td><td>'+data[i].rfc+'</td><td class="number">'+data[i].numero+'</td><td>'+data[i].folioFiscal+'</td><td>'+formatDate(data[i].invoiceDate)+'</td><td>'+formatDate(data[i].dueDate)+'</td><td>'+data[i].moneda+'</td><td>'+formatNumber(data[i].aforo)+'</td><td>'
+     +formatDate(data[i].purchaseDate)+'</td><td>'+data[i].aforoP+'%</td><td>$'+formatNumber(data[i].advanceRate)+'</td><td>'+data[i].discountPeriod+'</td><td>'+formatDate(data[i].matuDate)+'</td><td>$'+formatNumber(data[i].discountMargin)+'</td><td>$'+formatNumber(data[i].purchasePrice)
      +'</td><td>'+roundNum(data[i].porcentajeTotal)+'%</td>')
      row.append( cell );
 }

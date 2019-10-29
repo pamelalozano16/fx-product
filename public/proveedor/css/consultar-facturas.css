@@ -74,3 +74,13 @@ td{
     height: auto;
   }
 }
+
+.detalles{
+  background-color: transparent;
+  padding:0;
+  color:dodgerblue;
+  width:100px;
+}
+.detalles p{
+  text-decoration: underline;
+}
