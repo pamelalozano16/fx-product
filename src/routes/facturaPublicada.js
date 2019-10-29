@@ -48,4 +48,30 @@ router.get('/facturas/:name?/:rfc?/:dueDate?/:moneda?/:status?', async (req, res
      }
  })
 
+ router.get('/searchNumber/:num?', async (req, res, next)=>{
+    var numero=req.params.num
+     try{
+        const user = await Factura.find({numero})
+        if(!user){res.status(404).send("Not Found")}
+         res.send(user)
+     }
+     catch(e){
+         res.status(500).send(e.message)
+     }
+ })
+
+router.patch('/facturas/:id', async(req, res)=>{
+    const _id = req.params.id
+    try{
+       const user = await Factura.findByIdAndUpdate(_id, req.body, {new: true, runValidators: true})
+       if(!user){return res.status(404).send('Not found')}
+       user.save()
+       console.log(user)
+       res.send(user)
+    }
+    catch(e){
+        res.send(e)
+    }
+})
+
 module.exports = router

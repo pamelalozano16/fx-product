@@ -1,0 +1,11 @@
+.cb{
+border:none;
+}
+.desc-btn{
+    margin-bottom: 20px;
+}
+
+#resumen-div{
+    display:none;
+    margin-top:100px;
+}

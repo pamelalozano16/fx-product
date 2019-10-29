@@ -62,3 +62,17 @@
 margin-left:5px;
 margin:10px 0;
 }
+
+
+#comp-search p{
+    margin:10px 0;
+}
+
+#comp-search input{
+    width:200px;
+    padding-left:5px;
+}
+
+#comp-search button{
+    background-color: #607d8b;
+}

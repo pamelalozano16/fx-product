@@ -18,6 +18,15 @@ async function getProveedores(){
 }
 getProveedores()
 
+async function getCompradores(){
+    proveedoresJSON = await fetch('/compradores')
+    proveedores = await proveedoresJSON.json()
+    for(var p in proveedores){
+        $("#namesCompradores").append('<option>'+proveedores[p].name+'</option>')
+    }
+}
+getCompradores()
+
 $("#search-btn")[0].onclick=async function searchProveedor(){
     const name=$("#names")[0].value||'&'
     const rfc=$("#rfc")[0].value||'&'
@@ -27,10 +36,19 @@ $("#search-btn")[0].onclick=async function searchProveedor(){
     $("#names")[0].value=proveedor.name
 }
 
+$("#searchCompradores")[0].onclick=async function searchComprador(){
+    const name=$("#namesCompradores")[0].value||'&'
+    const rfc=$("#rfcCompradores")[0].value||'&'
+    const proveedorJSON = await fetch('/compradores/searchOne/'+name+'/'+rfc)
+    const proveedor = await proveedorJSON.json()
+    $("#rfcCompradores")[0].value=proveedor.rfc
+    $("#namesCompradores")[0].value=proveedor.name
+}
+
 $("#indv-registrar")[0].onclick=async function indvRegistrar(){
-    const name = $("#names")[0].value
+    const name = $("#namesCompradores")[0].value
     const numero = $("#numero")[0].value
-    const rfc = $("#rfc")[0].value
+    const rfc = $("#rfcCompradores")[0].value
     const folioFiscal = $("#folioFiscal")[0].value
     const moneda = ($("#moneda")[0].value).toLowerCase();
     const aforo = $("#aforo")[0].value

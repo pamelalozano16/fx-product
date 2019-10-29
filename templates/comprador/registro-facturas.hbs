@@ -8,11 +8,22 @@
         <div class="main-content">
         <h1>Registro Facturas</h1>
         <div class="register-form">
+
             <div class="sel-tipo">
                 Tipo de carga: 
                 <button id="individual-btn">Individual</button>
                 <button id="multiple-btn">Multiple</button>
             </div>
+             <div id="comp-search" class="form">
+                 <p style="font-weight: 700; color:#607d8b">Simular comprador:</p>
+                Name:
+                     <select id="namesCompradores">
+                         <option></option>
+                     </select>
+                RFC:
+                <input id="rfcCompradores">
+                <button id="searchCompradores">Search</button>
+             </div>
             {{!-- INDIVIDUAL FORM --}}
             <div id="individual-form" class="form">
              <div id="indv-search">

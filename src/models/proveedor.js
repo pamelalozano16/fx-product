@@ -11,9 +11,6 @@ const proveedorSchema = new mongoose.Schema({
     rfc:{
         type:String,
         unique:true
-    },
-    aforo:{
-        type:Number
     }
 })
 const proveedor = mongoose.model('proveedor', proveedorSchema)
