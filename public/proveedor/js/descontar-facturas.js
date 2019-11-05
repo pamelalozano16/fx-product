@@ -54,7 +54,7 @@ async function search(){
     borrarTabla()
     
 let name = $("#names")[0].value||"&"
-let status = $("#status")[0].value||"&"
+let status = "Publicada"
 let rfc = $("#rfc")[0].value||"&"
 let dueDate = $("#dueDate")[0].value||"&"
 let moneda= $("#moneda")[0].value||"&"
@@ -138,4 +138,5 @@ for(var j=0;j<arr.length;j++){
     })
   })
 }
+window.location.reload(true)
 }

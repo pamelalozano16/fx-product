@@ -39,6 +39,9 @@ app.get('/proveedor/consultar-facturas', (req, res)=>{
 app.get('/proveedor/descontar-facturas', (req, res)=>{
     res.render('proveedor/descontar-facturas')
 })
+app.get('/proveedor/detalles-consulta', (req, res)=>{
+    res.render('proveedor/detalles-consulta')
+})
 
 
 //COMPRADOR
