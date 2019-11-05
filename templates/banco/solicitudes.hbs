@@ -1,13 +1,13 @@
 <html>
     <head>
-<link rel="stylesheet" href="/proveedor/css/consultar-facturas.css">
+<link rel="stylesheet" href="/banco/css/solicitudes.css">
     </head>
     <body>
         {{>header}}
-        {{>sbProveedor}}
+        {{>sbBanco}}
         {{!-- Starts main content --}}
         <div class="main-content">
-        <h1>Consultar Facturas</h1>
+        <h1>Solicitudes</h1>
 
         {{!-- Starts search div --}}
         <div class="busqueda-div">
@@ -27,19 +27,12 @@
                </div>
                 </div>
                <div class="column">
-                <div class="seccion-busqueda">
-                 <p>Status:</p> 
-                   <select id="status">
-                        <option></option>
-                        <option value="Publicada">Publicada</option>
-                        <option value="En proceso">En Proceso</option>
-                        <option value="Confirming">Confirming</option>
-                        <option value="Vendida">Vendida</option>
-                   </select>
-               </div>
                <div class="seccion-busqueda">
                   <p>Fecha de Vencimiento:</p>
                    <input type="date" id="dueDate">
+               </div>
+            <div class="seccion-busqueda">
+            <button type="button" class="search-btn" onclick="search()">Search</button>
                </div>
             </div>
                <div class="column">
@@ -55,19 +48,20 @@
             </div>
             
             </form>
-            <button type="button" onclick="search()" id="search-btn">Search</button>
+
         </div>
         {{!-- Ends search div --}}
 
         {{!-- Starts Table Div --}}
         <div class="search-table">
+<button type="button" class="confirm-btn" onclick="confirmar()">Confirmar Solicitudes</button>
             <table id="result-table"></table>
         </div>
         {{!-- Ends Table Div --}}
 
         {{!-- Ends main content --}}
         </div>
-
-        <script src="/proveedor/js/consultar-facturas.js"></script>
+        
+        <script src="/banco/js/solicitudes.js"></script>
     </body>
 </html>

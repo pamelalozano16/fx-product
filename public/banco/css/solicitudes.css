@@ -60,11 +60,16 @@ td{
 }
 
 .search-table{
-  margin-top:300px;
+  margin-top:350px;
   overflow-x: auto; 
   white-space: nowrap;
   min-width:300px;
   margin-bottom:5%;
+}
+
+.confirm-btn{
+    margin-bottom: 25px;
+    background-color: brown;
 }
 
 @media only screen and (max-width:900px){
@@ -75,12 +80,10 @@ td{
   }
 }
 
-.detalles{
-  background-color: transparent;
-  padding:0;
-  color:dodgerblue;
-  width:100px;
+.cb{
+    border:none;
 }
-.detalles p{
-  text-decoration: underline;
+
+.search-btn{
+    margin-top:30px;
 }

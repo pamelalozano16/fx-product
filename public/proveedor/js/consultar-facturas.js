@@ -37,7 +37,13 @@ table.append(titles)
 for(var i in data){
      row = $('<tr />' );
      table.append( row );
-     cell = $('<td>'+data[i].name+'</td><td>'+data[i].rfc+'</td><td>'+data[i].numero+'</td><td>'+data[i].folioFiscal+'</td><td>'+formatDate(data[i].invoiceDate)+'</td><td>'+formatDate(data[i].dueDate)+'</td><td>'+data[i].moneda+'</td><td>'+formatNumber(data[i].aforo)+'</td><td>'+data[i].status+'</td>')
+     cell = $('<td>'+data[i].name+'</td><td>'+data[i].rfc+'</td><td>'+data[i].numero+'</td><td>'+data[i].folioFiscal+'</td><td>'+formatDate(data[i].invoiceDate)+'</td><td>'+formatDate(data[i].dueDate)+'</td><td>'+data[i].moneda+'</td><td>'+formatNumber(data[i].aforo)+'</td><td>'+data[i].status+'</td>'+
+     '<td><button type="button" class="detalles" id="'+data[i].numero+'"><p>Ver Detalles<p></button></td>')
      row.append( cell );
+     
 }
-    }
+$("button.detalles").click(async function(){
+    console.log(this.id)
+    window.open('/proveedor/detalles-consulta?'+this.id)
+})
+}
