@@ -51,6 +51,9 @@ app.get('/comprador/inicio', (req, res)=>{
 app.get('/comprador/registro-facturas', (req, res)=>{
     res.render('comprador/registro-facturas')
 })
+app.get('/comprador/consultar-facturas', (req, res)=>{
+    res.render('comprador/consultar-facturas')
+})
 
 //BANCO
 app.get('/banco/inicio', async(req, res)=>{
@@ -58,6 +61,9 @@ app.get('/banco/inicio', async(req, res)=>{
 })
 app.get('/banco/solicitudes', async(req, res)=>{
     res.render('banco/solicitudes')
+})
+app.get('/banco/consultar-facturas', async(req, res)=>{
+    res.render('banco/consultar-facturas')
 })
 
 

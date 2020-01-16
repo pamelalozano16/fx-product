@@ -1,0 +1,73 @@
+<html>
+    <head>
+<link rel="stylesheet" href="/proveedor/css/consultar-facturas.css">
+    </head>
+    <body>
+        {{>header}}
+        {{>sbComprador}}
+        {{!-- Starts main content --}}
+        <div class="main-content">
+        <h1>Consultar Facturas</h1>
+
+        {{!-- Starts search div --}}
+        <div class="busqueda-div">
+           <h3>Buscar:</h3>
+           <form>
+            <div class="row">
+                <div class="column">
+               <div class="seccion-busqueda">
+                 <p>Nombre Proveedor:</p> 
+                   <select id="names">
+                       <option></option>
+                   </select>
+               </div>
+               <div class="seccion-busqueda">
+                  <p>RFC:</p>
+                   <input type="text" id="rfc">
+               </div>
+                </div>
+               <div class="column">
+                <div class="seccion-busqueda">
+                 <p>Status:</p> 
+                   <select id="status">
+                        <option></option>
+                        <option value="Publicada">Publicada</option>
+                        <option value="En proceso">En Proceso</option>
+                        <option value="Confirming">Confirming</option>
+                        <option value="Vendida">Vendida</option>
+                   </select>
+               </div>
+               <div class="seccion-busqueda">
+                  <p>Fecha de Vencimiento:</p>
+                   <input type="date" id="dueDate">
+               </div>
+            </div>
+               <div class="column">
+               <div class="seccion-busqueda">
+                 <p>Moneda:</p> 
+                   <select id="moneda">
+                       <option></option>
+                       <option value="mxn">MXN</option>
+                       <option value="usd">USD</option>
+                   </select>
+               </div>
+                </div>
+            </div>
+            
+            </form>
+            <button type="button" onclick="search()" id="search-btn">Search</button>
+        </div>
+        {{!-- Ends search div --}}
+
+        {{!-- Starts Table Div --}}
+        <div class="search-table">
+            <table id="result-table"></table>
+        </div>
+        {{!-- Ends Table Div --}}
+
+        {{!-- Ends main content --}}
+        </div>
+
+        <script src="/comprador/js/consultar-facturas.js"></script>
+    </body>
+</html>
