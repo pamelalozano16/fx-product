@@ -31,6 +31,10 @@ app.get('/', (req, res)=>{
     res.render('inicio')
 })
 
+app.get('/notificacion', (req, res)=>{
+    res.render('notificacion')
+})
+
 //PROVEEDOR
 app.get('/proveedor/inicio', (req, res)=>{
     res.render('proveedor/inicio')

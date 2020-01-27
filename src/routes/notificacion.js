@@ -43,5 +43,17 @@ router.get('/notificaciones/:rfc?/:read?', async (req, res, next)=>{
          res.status(500).send(e.message)
      }
  })
+ router.get('/notificacionOne/:id', async (req, res, next)=>{
+    const _id=req.params.id
+     try{
+         const notif = await Notificacion.find({_id})
+         if(!notif){throw new Error ('not found')}
+         res.send(notif)
+     }
+     catch(e){
+         res.status(500).send(e.message)
+     }
+ })
+
 
  module.exports=router
