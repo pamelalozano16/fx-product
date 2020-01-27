@@ -48,6 +48,8 @@ $("#searchCompradores")[0].onclick=async function searchComprador(){
 $("#indv-registrar")[0].onclick=async function indvRegistrar(){
     const name = $("#namesCompradores")[0].value
     const numero = $("#numero")[0].value
+    const proveedor = $("#names")[0].value
+    const proveedorRFC = $("#rfc")[0].value
     const rfc = $("#rfcCompradores")[0].value
     const folioFiscal = $("#folioFiscal")[0].value
     const moneda = ($("#moneda")[0].value).toLowerCase();
@@ -71,6 +73,8 @@ $("#indv-registrar")[0].onclick=async function indvRegistrar(){
         invoiceDate,
         moneda,
         aforo,
+        proveedor,
+        proveedorRFC,
         folioFiscal
         })
     })

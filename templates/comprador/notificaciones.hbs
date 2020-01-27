@@ -8,24 +8,37 @@
         {{>sbComprador}}
  <div class="main-content">
         <h1>Notificaciones</h1>
+           <div id="comp-search" class="form">
+           <p style="font-weight: 700; color:#607d8b">Simular comprador:</p>
+                Name:
+                     <select id="namesCompradores">
+                         <option></option>
+                     </select>
+                RFC:
+            <input id="rfcCompradores">
+           <button id="searchCompradores">Search</button>
+             </div>
         <div class="caja">
            <div class="top-table"> 
-               <input type="checkbox"> Seleccionar Todas 
-               <button>Marcar como leído</button>
+               <input type="checkbox" id="selAll"> Seleccionar Todas 
+               <button id="marcarLeido">Marcar como leído</button>
                </div>
             <table id="tabla-notifs">
-            <tr>
+            {{!-- <tr>
             <td class="cb"><input type="checkbox"> </td>
             <td>La factura #237489427292 ha sido descontada por el proveedor</td>
+            <td class="detalles"><a href="#">Detalles</a></td>
             </tr>
              <tr>
              <td class="cb"><input type="checkbox"> </tdclass="cb">
              <td>La factura #237489427292 ha sido confirmada por el comprador</td>
-            </tr>
+             <td class="detalles"><a href="#">Detalles</a></td>
+            </tr> --}}
             </table>
-        </div></div>>
+        </div></div>
         </div>
         
     </body>
+    <script src="/comprador/js/notificaciones.js"></script>
 </html>
 

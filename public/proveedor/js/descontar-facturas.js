@@ -137,6 +137,28 @@ for(var j=0;j<arr.length;j++){
 
     })
   })
+
+  fetch('/notificaciones', {
+    method:'POST',
+    headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'accept-encoding': 'gzip, deflate'
+    },
+    body: JSON.stringify({
+      "from": i.proveedorRFC,
+      "to":[i.rfc],
+      "title":"La factura #"+i.numero+" ha sido descontada por "+
+      i.proveedor,
+      "message":"La factura #"+i.numero+" ha sido descontada por "+
+      i.proveedor+" con RFC: "+i.rfc+" el día "+formatDate(i.purchaseDate)+" por una cantidad total de $"+
+      formatNumber(i.purchasePrice)
+    })
+  })
+  
 }
+
+
+
 window.location.reload(true)
 }
