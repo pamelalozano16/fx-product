@@ -5,6 +5,7 @@ const port = process.env.PORT || 3000
 const facturasPublicadas = require('./routes/facturaPublicada')
 const proveedor = require('./routes/proveedor')
 const comprador = require('./routes/comprador')
+const notificacion = require('./routes/notificacion')
 require('./db/mongoose')
 
 
@@ -15,6 +16,7 @@ app.use(express.json())
 app.use(facturasPublicadas)
 app.use(proveedor)
 app.use(comprador)
+app.use(notificacion)
 
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates')

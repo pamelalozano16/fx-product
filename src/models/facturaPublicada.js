@@ -13,6 +13,12 @@ const Factura = mongoose.model('facturasPublicadas', {
             }
         },
     },
+    proveedor:{
+        type:String
+    },
+    proveedorRFC:{
+        type:String
+    },
     numero:{
         type: String
     },
