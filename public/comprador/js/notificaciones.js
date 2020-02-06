@@ -11,7 +11,7 @@ async function setTable(){
          row = $('<tr class="unread"/>' );
          table.append( row );
          cell = $('<td class="cb"><input type="checkbox"></td><td>'+data[i].title+
-         '</td><td class="detalles"><a href="/notificacion/'+data[i]._id+'">Detalles</a></td>')
+         '</td><td class="detalles"><a href="/notificacion?id='+data[i]._id+'">Detalles</a></td>')
          row.append( cell );
     }
      datajson = await fetch('/notificaciones/'+rfc+'/true')

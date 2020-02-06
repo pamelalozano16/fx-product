@@ -62,6 +62,24 @@ async function confirmar(){
             "status":"Vendida"
         })
     })
+
+    
+  fetch('/notificaciones', {
+    method:'POST',
+    headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'accept-encoding': 'gzip, deflate'
+    },
+    body: JSON.stringify({
+      "from": fac[0].proveedorRFC,
+      "to":[fac[0].rfc],
+      "title":formatDate(Date.now())+": La factura #"+fac[0].numero+" ha sido descontada por el banco",
+      "message":"La factura #"+fac[0].numero+" ha sido descontada por "+
+      fac[0].proveedor+" con RFC: "+fac[0].rfc+" el día "+formatDate(fac[0].purchaseDate)+" por una cantidad total de $"+
+      formatNumber(fac[0].purchasePrice)+" y fue aprobada por el banco el día "+formatDate(Date.now())
+    })
+  })
      window.location.reload(true)
     }
 }
