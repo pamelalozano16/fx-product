@@ -72,7 +72,8 @@ app.post('/comprador/registro-facturas/excel', upload.single('upload'), (req, re
 
     for(var i in archivo){
         var options = { method: 'POST',
-        url: 'https://fx-product.herokuapp.com/facturas', //IMPORTANTE!!! CAMBIAR A LOCALHOST
+        url: 'http://localhost:3000/facturas',
+  //  url: 'https://fx-product.herokuapp.com/facturas', //IMPORTANTE!!! CAMBIAR A LOCALHOST
         headers: 
          { 'cache-control': 'no-cache',
            Connection: 'keep-alive',

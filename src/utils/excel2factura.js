@@ -11,14 +11,16 @@ const result = excelToJson({
     sheets: [{
         name:'sheet1',
         columnToKey: {
-            A:"proveedor",
-            B: "proveedorRFC",
-            C: "numero",
-            D:'folioFiscal',
-            E:'invoiceDate',
-            F: 'dueDate',
-            G: 'moneda',
-            H: 'aforo'
+            A:"name",
+            B: "rfc",
+            C:"proveedor",
+            D: "proveedorRFC",
+            E: "numero",
+            F:'folioFiscal',
+            G:'invoiceDate',
+            H: 'dueDate',
+            I: 'moneda',
+            J: 'aforo'
 
             
         }}]
