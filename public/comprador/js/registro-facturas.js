@@ -81,3 +81,9 @@ $("#indv-registrar")[0].onclick=async function indvRegistrar(){
     $('#individual-form')[0].style.display='none';
     $("#result")[0].style.display='block';
 }
+
+var uploaded = window.location.pathname;
+if(uploaded=="/comprador/registro-facturas/excel"){
+    $('#individual-form')[0].style.display='none';
+    $("#result")[0].style.display='block';
+}

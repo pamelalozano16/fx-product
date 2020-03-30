@@ -23,7 +23,7 @@ router.get('/facturas', async (req, res)=>{
     }
 })
 
-router.get('/facturas/:name?/:rfc?/:dueDate?/:moneda?/:status?', async (req, res, next)=>{
+router.get('/facturas/:proveedor?/:proveedorRFC?/:dueDate?/:moneda?/:status?', async (req, res, next)=>{
 
     params=req.params
      try{

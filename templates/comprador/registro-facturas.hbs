@@ -59,11 +59,17 @@
             <div id="multip-form">
             <p><input type="radio" name="optradio">Excel</p>
             <p><input type="radio" name="optradio">Pipes (txt)</p>
-            <button id="multip-subir">Subir</button>
+                <div id="excelDiv" style="">
+        Selecciona un documento Excel: <br>
+        <form action="/comprador/registro-facturas/excel" method="post" enctype="multipart/form-data">
+        <input id="excel" type="file" name="upload" />
+        <button>Submit</button>
+        </form>
+    </div>
             </div>
             </div>
             <div id="result" style=" display:none;">
-                <h3 style="color:forestgreen;">Publicada Exitosamente</h3>
+                <h3 style="color:rgb(0, 61, 0);">Publicada Exitosamente</h3>
             </div>
         </div>
         </div>

@@ -19,9 +19,9 @@ getProveedores()
 async function search(){
     borrarTabla()
     
-let name ="&"  //NO PUEDES BUSCAR POR PROVEEDOR POR QUE NO EXISTEN EN LAS FACTURAS
+let name = $("#names")[0].value||"&"  //NO PUEDES BUSCAR POR PROVEEDOR POR QUE NO EXISTEN EN LAS FACTURAS
 let status = $("#status")[0].value||"&"
-let rfc = "&"
+let rfc =$("#rfc")[0].value||"&"
 let dueDate = $("#dueDate")[0].value||"&"
 let moneda= $("#moneda")[0].value||"&"
 
@@ -31,13 +31,13 @@ console.log(data)
 
 var table = $('#result-table');
 var row, cell;
-var titles = $('<th>Nombre del Comprador</th><th>RFC</th><th>Numero de Factura</th><th>Folio Fiscal</th><th>Fecha de Factura</th><th>Fecha de Vencimiento</th><th>Moneda</th><th> Valor de la Factura</th><th>Status</th>');
+var titles = $('<th>Nombre del Proveedor</th><th>RFC</th><th>Numero de Factura</th><th>Folio Fiscal</th><th>Fecha de Factura</th><th>Fecha de Vencimiento</th><th>Moneda</th><th> Valor de la Factura</th><th>Status</th>');
 table.append(titles)
 
 for(var i in data){
      row = $('<tr />' );
      table.append( row );
-     cell = $('<td>'+data[i].name+'</td><td>'+data[i].rfc+'</td><td>'+data[i].numero+'</td><td>'+data[i].folioFiscal+'</td><td>'+formatDate(data[i].invoiceDate)+'</td><td>'+formatDate(data[i].dueDate)+'</td><td>'+data[i].moneda+'</td><td>'+formatNumber(data[i].aforo)+'</td><td>'+data[i].status+'</td>'+
+     cell = $('<td>'+data[i].proveedor+'</td><td>'+data[i].proveedorRFC+'</td><td>'+data[i].numero+'</td><td>'+data[i].folioFiscal+'</td><td>'+formatDate(data[i].invoiceDate)+'</td><td>'+formatDate(data[i].dueDate)+'</td><td>'+data[i].moneda+'</td><td>'+formatNumber(data[i].aforo)+'</td><td>'+data[i].status+'</td>'+
      '<td><button type="button" class="detalles" id="'+data[i].numero+'"><p>Ver Detalles<p></button></td>')
      row.append( cell );
      

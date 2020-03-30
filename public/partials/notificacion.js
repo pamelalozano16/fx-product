@@ -9,5 +9,6 @@ async function setNotificacion(){
  console.log(data)
  $("#from")[0].innerText = data.from
  $("#message")[0].innerText = data.message
+ $("#ref")[0].innerText = data._id
 }
 setNotificacion()

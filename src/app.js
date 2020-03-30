@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const multer = require('multer');
+const request = require("request");
 const hbs = require('hbs');
 const port = process.env.PORT || 3000
 const facturasPublicadas = require('./routes/facturaPublicada')
@@ -7,6 +9,8 @@ const proveedor = require('./routes/proveedor')
 const comprador = require('./routes/comprador')
 const notificacion = require('./routes/notificacion')
 require('./db/mongoose')
+const e2f = require('./utils/excel2factura')
+const storageExcel = e2f.storageExcel;
 
 
 const app = express()
@@ -59,6 +63,34 @@ app.get('/comprador/inicio', (req, res)=>{
 app.get('/comprador/registro-facturas', (req, res)=>{
     res.render('comprador/registro-facturas')
 })
+
+var upload = multer({ storage: storageExcel});
+app.post('/comprador/registro-facturas/excel', upload.single('upload'), (req, res, next)=>{
+    console.log(req.file.originalname)
+    let archivo = e2f.converted();
+    //console.log(archivo[0]);
+
+    for(var i in archivo){
+        var options = { method: 'POST',
+        url: 'https://fx-product.herokuapp.com/facturas', //IMPORTANTE!!! CAMBIAR A LOCALHOST
+        headers: 
+         { 'cache-control': 'no-cache',
+           Connection: 'keep-alive',
+           'accept-encoding': 'gzip, deflate',
+           Accept: '*/*',
+           'Content-Type': 'application/json' },
+        body: archivo[i],
+        json: true };
+      
+      request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+      });
+    }
+    e2f.deleteFile();
+
+   res.render('comprador/registro-facturas')
+})
+
 app.get('/comprador/consultar-facturas', (req, res)=>{
     res.render('comprador/consultar-facturas')
 })
