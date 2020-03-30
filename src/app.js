@@ -39,6 +39,14 @@ app.get('/notificacion', (req, res)=>{
     res.render('notificacion')
 })
 
+//ADMINISTRADOR
+app.get('/administrador/inicio', (req, res)=>{
+    res.render('administrador/inicio')
+})
+app.get('/administrador/clientes', (req, res)=>{
+    res.render('administrador/clientes')
+})
+
 //PROVEEDOR
 app.get('/proveedor/inicio', (req, res)=>{
     res.render('proveedor/inicio')
@@ -63,7 +71,7 @@ app.get('/comprador/inicio', (req, res)=>{
 app.get('/comprador/registro-facturas', (req, res)=>{
     res.render('comprador/registro-facturas')
 })
-
+// REGISTRO MASIVO EXCEL
 var upload = multer({ storage: storageExcel});
 app.post('/comprador/registro-facturas/excel', upload.single('upload'), (req, res, next)=>{
     console.log(req.file.originalname)

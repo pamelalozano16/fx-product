@@ -1,0 +1,36 @@
+<html>
+    <head>
+<link rel="stylesheet" href="/banco/css/inicio.css">
+<link rel="stylesheet" href="/administrador/css/clientes.css">
+    </head>
+    <body>
+        {{>header}}
+        {{>sbAdmin}}
+        <div class="main-content">
+        <h1>Clientes</h1>
+        <div>
+            <h3>Nombre Proveedor: </h3>
+            <select id="names"></select>
+            <h3>RFC Proveedor: </h3>
+            <input type="text" id="rfcs">
+            </br>
+            <button style="margin-top: 20px;" onclick="search()" >Buscar</button>
+        </div>
+
+        <div class="card">
+         <div class="container">
+           <h4 id="name"><b></b></h4> 
+           RFC: <input type="text" id="rfc">
+           ID: <input type="text" id="numId">
+           FX product <input type="checkbox" id="fxproduct" style="display:inline;">
+           <button style="background-color: forestgreen; margin: 20px 0;" onclick="save()">
+               Save</button>
+            </div>
+         </div>
+
+        </div>
+        
+        <script src="/administrador/js/clientes.js"></script>
+    </body>
+</html>
+
