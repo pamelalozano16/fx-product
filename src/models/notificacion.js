@@ -7,6 +7,9 @@ const notifSchema = new mongoose.Schema({
     to:{
         type:[String]
     },
+    numero:{
+        type:String
+    },
     message:{
         type:String
     },

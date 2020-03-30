@@ -1,13 +1,26 @@
 <html>
     <head>
+<style>
+.main-content{
+    margin: 100px 50px;
+}
+.search-table{
+    margin-top:0;
+}
+</style>
+<link rel="stylesheet" href="/proveedor/css/consultar-facturas.css">
 
     </head>
     <body>
         {{>header}}
         {{>sbComprador}}
         <div class="main-content" style="margin-top:20%;">
+        <div class="search-table">
+        <table id="resumen-table"></table>
+
            <h3>From: <span id="from"></span></h3>
-           <h3>Notification:</h3>
+           <h4>Referencia: </h4><p id="ref"></p>
+           <h4>Notification:</h4>
            <p id="message"></p>
         </div>
     </body>

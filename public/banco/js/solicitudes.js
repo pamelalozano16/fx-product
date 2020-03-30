@@ -25,7 +25,7 @@ let rfc = $("#rfc")[0].value||"&"
 let dueDate = $("#dueDate")[0].value||"&"
 let moneda= $("#moneda")[0].value||"&"
 
-const dataJSON = await fetch('/facturas/'+name+'/'+rfc+'/'+dueDate+'/'+moneda+'/'+'En proceso')
+const dataJSON = await fetch('/facturas/'+name+'/'+rfc+'/&/&/'+dueDate+'/'+moneda+'/'+'En proceso')
 const data = await dataJSON.json()
 console.log(data)
 
@@ -74,6 +74,7 @@ async function confirmar(){
     body: JSON.stringify({
       "from": fac[0].proveedorRFC,
       "to":[fac[0].rfc],
+      "numero": fac[0].numero,
       "title":formatDate(Date.now())+": La factura #"+fac[0].numero+" ha sido descontada por el banco",
       "message":"La factura #"+fac[0].numero+" ha sido descontada por "+
       fac[0].proveedor+" con RFC: "+fac[0].rfc+" el día "+formatDate(fac[0].purchaseDate)+" por una cantidad total de $"+

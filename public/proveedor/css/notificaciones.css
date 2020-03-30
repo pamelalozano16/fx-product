@@ -3,8 +3,10 @@ border: #e5e5e5 1.5px solid;
 border-radius: 5px;
 background-color: #e5e5e5;
 margin: 10% 20%;
-max-width: 800px;
+max-width: 1200px;
 padding: 10px 10px;
+min-width: 460px;
+overflow-x: auto;
 }
 
 .read td{
@@ -36,4 +38,10 @@ td{
 
 .unread td{
     background-color: #fbedc5;
+}
+#read{
+    float:right;
+}
+#tabla-notifs{
+    overflow-x: auto;
 }
