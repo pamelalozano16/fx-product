@@ -11,6 +11,10 @@ const proveedorSchema = new mongoose.Schema({
     rfc:{
         type:String,
         unique:true
+    },
+    fxproduct:{
+        type:Boolean,
+        default:false
     }
 })
 const proveedor = mongoose.model('proveedor', proveedorSchema)

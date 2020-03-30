@@ -38,4 +38,20 @@ router.get('/proveedores/searchOne/:name?/:rfc?', async(req, res)=>{
     }
 })
 
+router.patch('/proveedores/:id', async(req, res)=>{
+    const _id = req.params.id
+    console.log(_id)
+    try{
+       const user = await Proveedor.findByIdAndUpdate(_id, req.body, {new: true, runValidators: true})
+       if(!user){return res.status(404).send('Not found')}
+       user.save()
+       console.log(user)
+       res.send(user)
+    }
+    catch(e){
+        
+        res.send(e)
+    }
+})
+
 module.exports=router
