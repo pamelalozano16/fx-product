@@ -59,7 +59,7 @@ let rfc = $("#rfc")[0].value||"&"
 let dueDate = $("#dueDate")[0].value||"&"
 let moneda= $("#moneda")[0].value||"&"
 
-const dataJSON = await fetch('/facturas/'+name+'/'+rfc+'/'+dueDate+'/'+moneda+'/'+status)
+const dataJSON = await fetch('/facturas/'+name+'/'+rfc+'/&/&/'+dueDate+'/'+moneda+'/'+status)
 const data = await dataJSON.json()
 console.log(data)
 
